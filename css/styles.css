@@ -1,0 +1,415 @@
+/* Reset de estilos e estilos gerais */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* Estilos para o menu */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+li a:hover {
+    transform: translate(5px, -5px) scale(1.1);
+    /* Move e aumenta o tamanho */
+    font-size: 18px;
+    /* Altera o tamanho da fonte */
+}
+
+
+/* Estilos para os links dentro dos itens da lista */
+
+li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    /* Adiciona transições suaves */
+}
+
+
+/* Efeito de hover */
+
+li a:hover {
+    transform: translate(5px, -5px) scale(1.1);
+    /* Move e aumenta o tamanho */
+    font-size: 18px;
+    /* Altera o tamanho da fonte */
+}
+
+
+/* Estilos para imagens */
+
+.cafe-image {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 50px auto;
+}
+
+
+/* Estilos para o formulário */
+
+.formulario {
+    background-color: #d2d2d3;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #291e68;
+}
+
+.formulario-body {
+    background-color: #3e3e3f;
+    /* Substitua pela cor desejada para o cardápio */
+    margin: 0;
+    /* Remove a margem padrão do corpo da página */
+}
+
+
+/* Estilos para a tabela */
+
+
+/* Estilos padrão para a tabela */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Propriedades de formatação de fontes, textos e cores */
+
+h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+/* Estilos específicos para telas menores (por exemplo, dispositivos móveis) */
+
+@media screen and (max-width: 768px) {
+    table {
+        margin: 10px;
+        /* Reduz a margem da tabela em telas menores */
+    }
+    th,
+    td {
+        padding: 5px;
+        /* Reduz o espaçamento interno das células */
+        font-size: 14px;
+        /* Reduz o tamanho da fonte nas células */
+    }
+    h1 {
+        font-size: 20px;
+        /* Reduz o tamanho da fonte do cabeçalho */
+    }
+    p {
+        font-size: 14px;
+        /* Reduz o tamanho da fonte dos parágrafos */
+    }
+}
+
+
+/* Propriedades margin, padding, border e display */
+
+.container {
+    margin: 100px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    color: #666;
+    background-color: #fff;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardapio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.cardapio-body {
+    background-color: #1b1b1f;
+    /* Substitua pela cor desejada para o cardápio */
+    margin: 0;
+    /* Remove a margem padrão do corpo da página */
+}
+
+.cardapio-h1 {
+    color: #fff;
+}
+
+.titulo-cardapio {
+    color: #fff;
+    /* Substitua "red" pela cor desejada */
+}
+
+.item {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item img:hover {
+    transform: scale(1.1);
+    /* Aumenta a escala em 10% quando o mouse passa sobre a imagem */
+    transition: transform 0.3s ease;
+    /* Adiciona uma transição suave para o efeito */
+}
+
+
+/* Estilos responsivos */
+
+@media screen and (max-width: 768px) {
+    .cardapio {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item {
+        max-width: 90%;
+    }
+}
+
+
+/* Estilos para o cabeçalho */
+
+.header {
+    position: relative;
+    text-align: center;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+}
+
+.header h1 {
+    position: absolute;
+    top: 90%;
+    /* Ajuste essa porcentagem conforme necessário para mover o texto para baixo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    /* Cor do texto do título */
+}
+
+
+/* Estilos gerais para a página "Sobre Nós" */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+}
+
+header ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.about-us {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.event {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.event img {
+    max-width: 100%;
+    height: auto;
+}
+
+.event .date {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.event .description {
+    font-size: 16px;
+}
+
+.event img:hover {
+    transform: scale(1.1);
+    /* Aumenta a escala em 10% quando o mouse passa sobre a imagem */
+    transition: transform 0.3s ease;
+    /* Adiciona uma transição suave para o efeito */
+}
+
+
+/* Estilos padrão para o rodapé */
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    /* Altera para um layout de coluna em telas menores */
+    align-items: center;
+    /* Centraliza o conteúdo na vertical */
+}
+
+.contact-info,
+.date-location {
+    text-align: center;
+    /* Centraliza o texto na horizontal */
+    padding: 10px;
+    margin: 5px 0;
+    /* Adiciona margem entre os elementos */
+}
+
+
+/* Estilos específicos para a data e a localização */
+
+.date-location {
+    position: relative;
+    /* Remove o posicionamento absoluto para reorganização em telas menores */
+    bottom: auto;
+    left: auto;
+    margin-top: 20px;
+    /* Espaçamento superior padrão */
+}
+
+
+/* Estilos específicos para telas menores (por exemplo, dispositivos móveis) */
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        padding: 10px;
+        /* Reduz o espaçamento interno */
+    }
+    .contact-info,
+    .date-location {
+        padding: 5px;
+        /* Reduz o espaçamento interno */
+        margin: 3px 0;
+        /* Adiciona margem menor entre os elementos */
+    }
+    .date-location {
+        margin-top: 10px;
+        /* Espaçamento superior menor em telas menores */
+    }
+}
+
+
+/* Estilos para o formulário */
+
+.formulario {
+    margin-right: 20px;
+    /* Espaçamento à direita do formulário */
+}
+
+
+/* Estilos para o elemento de texto ao lado do formulário */
+
+.texto-lateral {
+    flex: 1;
+    /* Ocupa o espaço restante disponível */
+    background-color: #f2f2f2;
+    /* Cor de fundo */
+    padding: 20px;
+    /* Espaçamento interno */
+    border: 1px solid #ddd;
+    /* Borda */
+    border-radius: 5px;
+    /* Borda arredondada */
+}
+
+
+/* Estilos de texto dentro do elemento */
+
+.texto-lateral p {
+    font-size: 16px;
+    color: #333;
+}
