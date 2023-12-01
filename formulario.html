@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Contato - Cafeteria Delícia</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    
+
 </head>
 
 <body class="cardapio-body">
@@ -16,7 +20,7 @@
             <li><a href="sobre.html">Sobre Nós</a></li>
             <li><a href="formulario.html">Contato</a></li>
             <li><a href="tabela.html">Horários</a></li>
-            <li><a href="carrinho.html">Carrinho</a></li>
+            <li><a href="reserva.html">Reserva</a></li>
         </ul>
     </header>
     <div class="container">
@@ -26,20 +30,16 @@
                 <h3>Formulário de Contato</h3>
                 <form id="meuFormulario" action="" method="get">
                     <p>
-                        <label for="Nome">Nome:</label>
-                        <input type="tel" name="Nome" id="Nome" placeholder="Digite seu Nome" required autofocus maxlength="15" size="15">
+                        <label for="nomeForm">Nome:</label>
+                        <input type="name" name="nomeForm" id="nomeForm" placeholder="Digite seu Nome" required autofocus size="15">
                     </p>
                     <p>
-                        <label for="Telefone">Telefone:</label>
-                        <input type="tel" name="Telefone" id="Telefone" placeholder="Digite seu telefone" required autofocus maxlength="10" size="15">
+                        <label for="telForm">Telefone:</label>
+                        <input type="tel" name="telForm" id="telForm"  placeholder="Digite seu telefone" required  size="15">
                     </p>
                     <p>
                         <label for="email">E-mail:</label>
-                        <input type="email" name="email" id="email" required>
-                    </p>
-                    <p>
-                        <label for="date">Data Nascimento:</label>
-                        <input type="date" name="date" id="date" required>
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
                     </p>
                     <p>
                         <label>Selecione os tópicos de interesse:</label><br>
@@ -52,65 +52,34 @@
                         <input type="checkbox" name="conhecer" id="conhecer">
                         <label for="conhecer">Quero Apenas Conhecer</label>
                     </p>
-                    <script src="js/fn_formulario.js"></script>
                     <p>
-                        <input type="Submit" name="Enviar Dados">
+                        <label for="mensagem">Deixa sua mensagem:</label><br>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="5"></textarea>
+                        <!-- está com o "resize: none;" para não permitir ajustar -->
                     </p>
-                    <script>
-                        // Obtém uma referência para o formulário
-                        var form = document.getElementById('meuFormulario');
-
-                        // Adiciona um evento de envio ao formulário
-                        form.addEventListener('submit', function(event) {
-                            // Impede o envio do formulário padrão
-                            event.preventDefault();
-
-                            // Obtém o valor inserido no campo de nome
-                            var nome = document.getElementById('Nome').value;
-
-                            // Exibe a mensagem de agradecimento com o nome
-                            alert('Obrigado, ' + nome + '! Logo entraremos em contato.');
-
-                            // Redefine os valores dos campos do formulário
-                            form.reset();
-                        });
-                    </script>
+                    <p>
+                        <button type="submit">Enviar</button>
+                    </p>
+                    
                 </form>
             </div>
             <div class="texto-lateral">
                 <p>
-                    Caro visitante,
-                </p>
-
-                <p>
+                    Caro visitante,<br><br>
                     Agradecemos por entrar em contato conosco. Sua mensagem foi recebida com sucesso! Estamos empolgados em iniciar uma conversa com você e fornecer todas as informações necessárias sobre a Coffee Shop MACHADO.
-                </p>
-
-                <p>
+                    <br><br>
                     Após o envio do formulário, nossa equipe dedicada entrará em contato com você dentro de 24 horas para discutir suas necessidades e responder a quaisquer perguntas que você possa ter. Fique à vontade para nos informar suas preferências de contato, seja
-                    por telefone ou e-mail.
-                </p>
-
-                <p>
+                    por telefone ou e-mail.<br><br>
                     Nossa cafeteria está sempre inovando e expandindo nossos horizontes. Estamos entusiasmados em compartilhar nossos produtos mais recentes, valores e planos de negócios com você. Também oferecemos a oportunidade de agendar uma visita pessoal para que você
-                    possa conhecer nossas instalações e nossa equipe.
-                </p>
-
-                <p>
+                    possa conhecer nossas instalações e nossa equipe.<br><br>
                     Se você estiver interessado em oportunidades de franquia conosco, ficaremos felizes em discutir nossos programas de franquia e os benefícios de se tornar um membro da nossa rede.
-                </p>
-
-                <p>
+                    <br><br>
                     Mais uma vez, agradecemos por escolher a Coffee Shop MACHADO como seu destino de contato. Estamos ansiosos para construir uma relação sólida e satisfatória com você.
-                </p>
-
-                <p>
-                    Atenciosamente,<br> Equipe da Coffee Shop MACHADO
-                </p>
-
+                    <br><br>Atenciosamente,<br> Equipe da Coffee Shop MACHADO
             </div>
         </div>
     </div>
+    
     <footer>
         <div class="footer-content">
             <div class="contact-info">
@@ -126,5 +95,6 @@
         </div>
     </footer>
 </body>
+<script src="js/fn_formulario.js"></script>
 
 </html>

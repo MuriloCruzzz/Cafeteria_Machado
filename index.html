@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,25 +15,19 @@
             <li><a href="sobre.html">Sobre Nós</a></li>
             <li><a href="formulario.html">Contato</a></li>
             <li><a href="tabela.html">Horários</a></li>
-            <li><a href="carrinho.html">Carrinho</a></li>
+            <li><a href="reserva.html">Reserva</a></li>
         </ul>
     </header>
     <div class="header">
         <img class="header-image" src="imagens/cafe.jpg" alt="Café delicioso">
-
-    </div>
-</body>
-
-<body class="cardapio-body">
-    <header>
         <ul>
             <li>
                 <h1>Bem-vindo à Coffee Shop MACHADO!</h1>
             </li>
         </ul>
-    </header>
+    </div>  
     <section class="about-us">
-        <h1 class="cardapio-body">Nossa História</h1>
+        <h2 class="cardapio-body">Nossa História</h2>
 
         <div class="timeline">
             <div class="event">
@@ -78,47 +71,99 @@
             </div>
         </div>
     </section>
-</body>
-
-<body class="cardapio-body">
-    <header>
-        <ul>
-            <li>
-                <a></a>
-                <h1>Nossos Produtos</h1>
-    </header>
-
-    <div class="cardapio">
-        <div class="item">
-            <img src="imagens/cafe1.jpg" alt="Café Espresso">
-            <h2>Café Espresso</h2>
+    <div class="cardapio-carrossel">
+        <h3>Um pouco dos nossos Produtos</h3>
+        <div class="slideshow-container">
+            <div class="slideshow fade">
+                <div class="numeracao">1 / 9</div>
+                    <img src="/imagens/cafe-7.jpg" alt="slide">
+                <div class="legenda">Cafés</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">2 / 9</div>
+                    <img src="/imagens/cafe-3.jpg" alt="Slide">
+                <div class="legenda">Cafés</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">3 / 9</div>
+                    <img src="/imagens/cafe-4.jpg" alt="Slide">
+                <div class="legenda">Cafés</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">4 / 9</div>
+                    <img src="/imagens/doce-1.jpg" alt="slide">
+                <div class="legenda">Doces</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">5 / 9</div>
+                    <img src="/imagens/doce-2.jpg" alt="Slide">
+                <div class="legenda">Doces</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">6 / 9</div>
+                    <img src="/imagens/doce-3.jpg" alt="Slide">
+                <div class="legenda">Doces</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">7 / 9</div>
+                    <img src="/imagens/lanche1.jpg" alt="slide">
+                <div class="legenda">Lanches</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">8 / 9</div>
+                    <img src="/imagens/lanche2.jpg" alt="Slide">
+                <div class="legenda">Lanches</div>
+            </div>
+            <div class="slideshow fade">
+                <div class="numeracao">9 / 9</div>
+                    <img src="/imagens/lanche3.jpg" alt="Slide">
+                <div class="legenda">Lanches</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
         </div>
-        <div class="item">
-            <img src="imagens/bolo1.jpg" alt="Bolo de Chocolate">
-            <h2>Bolo de Chocolate</h2>
-        </div>
-        <div class="item">
-            <img src="imagens/sanduiche1.jpg" alt="Sanduíche de Frango">
-            <h2>Sanduíche de Frango</h2>
-        </div>
-        <div class="item">
-            <img src="imagens/sorvete1.jpg" alt="Sorvete de Baunilha">
-            <h2>Sorvete de Baunilha</h2>
+        <div class="paginacao">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
         </div>
     </div>
-</body>
+    <div id="sessaoComentarios">
+        <h5>Comentários e Avaliações</h5>
 
-<body class="cardapio-body">
-    <header>
-        <ul>
-            <li>
-                <h1>Horarios de Funcionamento</h1>
-            </li>
-        </ul>
-    </header>
+        <div id="comentarios">
+            <!-- Os comentários serão adicionados dinamicamente aqui -->
+        </div>
+
+        <p>Seu comentário vale muito!</p>
+
+        <form id="formularioComentario">
+            
+            <input type="text" id="nome" name="nome" placeholder="Escreva seu nome" required>
+            <br><br>
+            
+            <textarea id="novoComentario" name="novoComentario" rows="4" placeholder="Escreva seu comentário" required></textarea>
+            <br>
+            <input type="button" id="buttonComentario"value="Adicionar Comentário" onclick="adicionarComentario()">
+        </form>
+    </div>
+        
+    <div>   
+        <h5>Horarios de Funcionamento</h5>
+    </div>
+    
     <div class="container">
+        <h6>Nossos Horários</h6>
+        <p id="status">Status: <span id="statusCafeteria" class="fechado">Fechado</span></p>
 
-        <table>
+        <table border="2">
             <tr>
                 <th>Dias</th>
                 <th>Horários</th>
@@ -126,50 +171,50 @@
             <tbody>
                 <tr>
                     <td>Segunda - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Terça - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Quarta - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Quinta - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Sexta - Feira</td>
-                    <td>Das 07:00 as 20:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
-                    <td>Sabado</td>
-                    <td>Das 07:00 as 20:00</td>
+                    <td>Sábado</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Domingo e Feriados</td>
-                    <td>Das 07:00 as 16:00</td>
+                    <td class="fechado">FECHADOS</td>
                 </tr>
-
             </tbody>
         </table>
     </div>
-    <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <h3>Contato</h3>
-                <p>Telefone: (123) 456-7890</p>
-                <p>Email: contato@coffeeshopmachado.com</p>
-                <p>Endereço: Rua da Cafeteria, 123</p>
-            </div>
-            <div class="date-location">
-                <p>Data Atual: 10 de Outubro de 2023</p>
-                <p>Localização: Campos do Jordão, São Paulo, Brasil</p>
-            </div>
-        </div>
-    </footer>
 </body>
+<footer>
+    <div class="footer-content">
+        <div class="contact-info">
+            <h6>Contato</h6>
+            <p>Telefone: (123) 456-7890</p>
+            <p>Email: contato@coffeeshopmachado.com</p>
+            <p>Endereço: Rua da Cafeteria, 123</p>
+        </div>
+        <div class="date-location">
+            <p>Data Atual: 10 de Outubro de 2023</p>
+            <p>Localização: Campos do Jordão, São Paulo, Brasil</p>
+        </div>
+    </div>
+</footer>
 
+<script src="/js/script.js"></script>
 </html>

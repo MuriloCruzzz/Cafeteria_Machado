@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Delícia - Reserva</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        background: #222;
+        }
+        h1, h2, h3 {
+        color: #fff;
+        }
+        form {
+        margin-top: 20px;
+        }
+        label, input {
+        margin-bottom: 10px;
+        width: 150px;
+        }
+        input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+        input[type="submit"]:hover {
+        background-color: #45a049;
+        
+        }
+        #reservaForm{
+            background: #fff;
+            margin: 15px 600px;
+            border: 1px solid #ffffff;
+            border-radius: 22px;
+            padding: 30px 80px;
+        }
+    </style>
+    </head>
+    <body>
+      
+        <header>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="formulario.html">Contato</a></li>
+                <li><a href="tabela.html">Horários</a></li>
+                <li><a href="reserva.html">Reserva</a></li>
+            </ul>
+        </header>
+        <div class="header">
+            <img class="header-image" src="imagens/cafe.jpg" alt="Café delicioso">
+        </div>  
+    
+    <section id="sessaoReserva">
+        <h2>Faça sua reserva!</h2>
+    
+        <form id="reservaForm" onsubmit="return confirmarReserva()">
+        <label for="nomeReserva">Nome:</label><br>
+        <input type="text" id="nomeReserva" name="nomeReserva" required>
+        <br>
+        <label for="data">Data:</label><br>
+        <input type="date" id="data" name="data" required>
+        <br>
+        <label for="horario">Horário:</label><br>
+        <input type="time" id="horario" name="horario" required>
+        <br>
+        <label for="pessoas">Número de Pessoas:</label><br>
+        <input type="number" id="pessoas" name="pessoas" required>
+        <br>
+        <input type="submit" value="Reservar">
+        </form>
+    </section>
+
+    <script>
+        function confirmarReserva() {
+            var dataInput = document.getElementById('data');
+            var horarioInput = document.getElementById('horario');
+            var pessoasInput = document.getElementById('pessoas');
+
+            var data = dataInput.value;
+            var horario = horarioInput.value;
+            var pessoas = pessoasInput.value;
+
+            // Verificar se a data é no futuro
+            var hoje = new Date();
+            var dataSelecionada = new Date(data);
+            
+            if (dataSelecionada <= hoje) {
+                alert('Selecione uma data futura para fazer a reserva.');
+                return false;
+            }
+
+            if (pessoas <= 0) {
+                alert('Entre com um número válido de pessoas!');
+                document.querySelector('#pessoas').value = ""; // Limpar o campo de número de pessoas
+                return false;
+            }
+
+            // Verificar se é domingo ou feriado
+            if (dataSelecionada.getDay() === 0 || isFeriado(dataSelecionada)) {
+                alert('Desculpe, não aceitamos reservas para domingo ou feriados.');
+                return false;
+            }
+
+            // Verificar se o horário está dentro do intervalo de funcionamento
+            var horarioAbertura = new Date(data + 'T08:00');
+            var horarioFechamento = new Date(data + 'T19:30');
+            var horarioReserva = new Date(data + 'T' + horario);
+
+            if (horarioReserva < horarioAbertura || horarioReserva > horarioFechamento) {
+                alert('Desculpe, aceitamos reservas somente das 08:00 às 19:30.');
+                return false;
+            }
+
+            alert('Reserva confirmada para ' + pessoas + ' pessoas em ' + data + ' às ' + horario + '.');
+
+            // Retorne false para evitar que o formulário seja enviado
+            return false;
+        }
+
+        // Função de exemplo para verificar se a data é um feriado (pode ser ajustada conforme necessário)
+        function isFeriado(data) {
+            // Implemente a lógica para verificar se a data é um feriado aqui
+            // Retorna true se for feriado, caso contrário, retorna false
+            return false;
+        }
+ 
+    </script>
+</body>
+
+<footer>
+    <div class="footer-content">
+        <div class="contact-info">
+            <h6>Contato</h6>
+            <p>Telefone: (123) 456-7890</p>
+            <p>Email: contato@coffeeshopmachado.com</p>
+            <p>Endereço: Rua da Cafeteria, 123</p>
+        </div>
+        <div class="date-location">
+            <p>Data Atual: 10 de Outubro de 2023</p>
+            <p>Localização: Campos do Jordão, São Paulo, Brasil</p>
+        </div>
+    </div>
+</footer>
+
+</html>

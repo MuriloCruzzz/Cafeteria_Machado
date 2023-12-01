@@ -1,66 +1,25 @@
-const preco = 5;
+function adicionarAoCarrinho() {
+    // Seletor para todos os elementos com a classe "item"
+    var itens = document.querySelectorAll('.item');
 
-// Evento do botão adicionar
-document.getElementById("adicionar").addEventListener("click", function() {
-    // Obtém o valor do campo quantidade
-    const quantidade = document.getElementById("quantidade").value;
+    // Itera sobre cada item
+    itens.forEach(function (item) {
+        // Obtém a quantidade do input
+        var quantidade = parseInt(item.querySelector('input[name="idProduto"]').value, 10);
 
-    // Calcula o valor total do produto
-    const valorTotal = preco * quantidade;
+        // Se a quantidade for válida
+        if (!isNaN(quantidade) && quantidade > 0) {
+            // Obtém o preço do produto
+            var precoUnitario = parseFloat(item.querySelector('#valor-produto').innerText.replace('R$ ', ''));
 
-    // Adiciona o produto ao carrinho
-    adicionarAoCarrinho(valorTotal);
-});
+            // Calcula o preço total do item
+            var precoTotal = quantidade * precoUnitario;
 
-// Função para adicionar o produto ao carrinho
-function adicionarAoCarrinho(valorTotal) {
-    // Obtém o carrinho
-    const carrinho = getCarrinho();
-
-    // Adiciona o produto ao carrinho
-    carrinho.push({
-        produto: "Café Espresso",
-        quantidade: quantidade,
-        valorTotal: valorTotal
+            // Atualiza o preço total na página
+            item.querySelector('.preco').innerText = 'R$ ' + precoTotal.toFixed(2);
+        } else {
+            // Se a quantidade não for válida, exibe um alerta (pode ser ajustado conforme necessário)
+            
+        }
     });
-
-    // Salva o carrinho
-    setCarrinho(carrinho);
-
-    // Exibe o carrinho
-    exibirCarrinho();
-}
-
-// Função para obter o carrinho
-function getCarrinho() {
-    // Verifica se o carrinho já existe
-    if (!carrinho) {
-        // Cria o carrinho
-        carrinho = [];
-    }
-
-    // Retorna o carrinho
-    return carrinho;
-}
-
-// Função para salvar o carrinho
-function setCarrinho(carrinho) {
-    // Armazena o carrinho no localStorage
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
-}
-
-// Função para exibir o carrinho
-function exibirCarrinho() {
-    // Obtém o carrinho
-    const carrinho = getCarrinho();
-
-    // Verifica se o carrinho está vazio
-    if (carrinho.length === 0) {
-        // Exibe uma mensagem
-        alert("Carrinho está vazio");
-        return;
-    }
-
-    // Exibe o carrinho
-    console.log(carrinho);
 }

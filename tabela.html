@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Horários - Cafeteria Delícia</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Seu CSS aqui */
+        #statusCafeteria {
+          font-weight: bold;
+        }
+    
+        .aberto {
+          color: green;
+        }
+    
+        .fechado {
+          color: red;
+        }
+      </style>
 </head>
 
 <body class="cardapio-body">
@@ -16,12 +30,13 @@
             <li><a href="sobre.html">Sobre Nós</a></li>
             <li><a href="formulario.html">Contato</a></li>
             <li><a href="tabela.html">Horários</a></li>
-            <li><a href="carrinho.html">Carrinho</a></li>
+            <li><a href="reserva.html">Reserva</a></li>
         </ul>
     </header>
 
     <div class="container">
         <h2>Nossos Horários</h2>
+        <p>Status: <span id="statusCafeteria" class="fechado">Fechado</span></p>
 
         <table border="2">
             <tr>
@@ -31,36 +46,36 @@
             <tbody>
                 <tr>
                     <td>Segunda - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Terça - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Quarta - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Quinta - Feira</td>
-                    <td>Das 08:00 as 19:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Sexta - Feira</td>
-                    <td>Das 07:00 as 20:00</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
-                    <td>Sabado</td>
-                    <td>Das 07:00 as 20:00</td>
+                    <td>Sábado</td>
+                    <td>Das 08:00 as 19:30</td>
                 </tr>
                 <tr>
                     <td>Domingo e Feriados</td>
-                    <td>Das 07:00 as 16:00</td>
+                    <td class="fechado">FECHADOS</td>
                 </tr>
-
             </tbody>
         </table>
     </div>
+
     <footer>
         <div class="footer-content">
             <div class="contact-info">
@@ -75,6 +90,37 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function verificarHorarioFuncionamento() {
+            var agora = new Date();
+            var diaSemana = agora.getDay(); // 0 (domingo) a 6 (sábado)
+            var horaAtual = agora.getHours();
+            var minutoAtual = agora.getMinutes();
+
+            var abertura = { dia: 1, hora: 8, minuto: 0 }; // Exemplo: Segunda-feira às 8:00
+            var fechamento = { dia: 5, hora: 19, minuto: 30 }; // Exemplo: Sexta-feira às 18:30
+            var domingosFeriados = [0, 6]; // Dias da semana: 0 (domingo), 6 (sábado)
+
+            var statusCafeteria = document.getElementById('statusCafeteria');
+
+            if (
+                (diaSemana >= abertura.dia && diaSemana <= fechamento.dia && horaAtual >= abertura.hora && horaAtual < fechamento.hora) &&
+                (!domingosFeriados.includes(diaSemana))
+            ) {
+                statusCafeteria.innerText = 'Aberto';
+                statusCafeteria.className = 'aberto';
+            } else {
+                statusCafeteria.innerText = 'Fechado';
+                statusCafeteria.className = 'fechado';
+            }
+        }
+
+        // Chame a função para verificar o horário de funcionamento ao carregar a página
+        window.onload = function () {
+            verificarHorarioFuncionamento();
+        };
+    </script>
 </body>
 
 </html>
