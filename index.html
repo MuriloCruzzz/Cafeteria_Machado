@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+    <!-- Metadados da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
     <title>Cafeteria Delícia</title>
+    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="cardapio-body">
+    <!-- Cabeçalho da página -->
     <header>
         <ul>
+            <!-- Menu de navegação -->
             <li><a href="index.html">Início</a></li>
             <li><a href="cardapio.html">Cardápio</a></li>
             <li><a href="sobre.html">Sobre Nós</a></li>
@@ -18,19 +24,23 @@
             <li><a href="reserva.html">Reserva</a></li>
         </ul>
     </header>
+    <!-- Imagem Cafeteria destaque -->
     <div class="header">
         <img class="header-image" src="imagens/cafe.jpg" alt="Café delicioso">
         <ul>
             <li>
+                <!-- Título do destaque -->
                 <h1>Bem-vindo à Coffee Shop MACHADO!</h1>
             </li>
         </ul>
-    </div>  
+    </div>
+    <!-- Seção da linha do tempo -->
     <section class="about-us">
         <h2 class="cardapio-body">Nossa História</h2>
 
         <div class="timeline">
             <div class="event">
+                <!-- Adiciona a imagem e texto referenciado ao lado direito de acordo com o css  -->
                 <img src="imagens/antes-da-cafeteria.jpg" alt="Antes da cafeteria">
                 <div class="event-details">
                     <p class="date">1995</p>
@@ -42,6 +52,7 @@
 
             <div class="event">
                 <div class="event-details">
+                    <!-- Adiciona a imagem e texto referenciado ao lado esquerdo de acordo com o css  -->
                     <p class="date">2000</p>
                     <p class="description">
                         Após anos de aprendizado sobre grãos de café e métodos de torrefação, João decidiu transformar seu sonho em realidade. Em 2000, ele construiu a primeira Coffee Shop MACHADO com suas próprias mãos.
@@ -53,6 +64,7 @@
             <div class="event">
                 <img src="imagens/abertura-cafeteria.jpg" alt="Abertura da cafeteria">
                 <div class="event-details">
+                    <!-- Adiciona a imagem e texto referenciado ao lado direito de acordo com o css  -->
                     <p class="date">2005</p>
                     <p class="description">
                         Em 2005, a Coffee Shop MACHADO abriu suas portas pela primeira vez, oferecendo uma variedade de cafés excepcionais e deliciosos acompanhamentos. A comunidade local rapidamente se apaixonou pelo ambiente acolhedor e aromas irresistíveis.
@@ -62,6 +74,7 @@
 
             <div class="event">
                 <div class="event-details">
+                    <!-- Adiciona a imagem e texto referenciado ao lado esquerdo de acordo com o css  -->
                     <p class="date">Hoje</p>
                     <p class="description">
                         Hoje, a Coffee Shop MACHADO é um local de encontro para amigos e amantes de café. Continuamos a inovar e aprimorar nossa oferta de café, mantendo nosso compromisso com a qualidade e a paixão que nos impulsionou desde o início.
@@ -71,58 +84,61 @@
             </div>
         </div>
     </section>
+    <!-- Adiciona o carrossel de imagens  -->
     <div class="cardapio-carrossel">
         <h3>Um pouco dos nossos Produtos</h3>
+        <!-- Repassa os parametros de imagem e legenda -->
         <div class="slideshow-container">
             <div class="slideshow fade">
                 <div class="numeracao">1 / 9</div>
-                    <img src="/imagens/cafe-7.jpg" alt="slide">
+                <img src="imagens/cafe-7.jpg" alt="slide">
                 <div class="legenda">Cafés</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">2 / 9</div>
-                    <img src="/imagens/cafe-3.jpg" alt="Slide">
+                <img src="imagens/cafe-3.jpg" alt="Slide">
                 <div class="legenda">Cafés</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">3 / 9</div>
-                    <img src="/imagens/cafe-4.jpg" alt="Slide">
+                <img src="imagens/cafe-4.jpg" alt="Slide">
                 <div class="legenda">Cafés</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">4 / 9</div>
-                    <img src="/imagens/doce-1.jpg" alt="slide">
+                <img src="imagens/doce-1.jpg" alt="slide">
                 <div class="legenda">Doces</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">5 / 9</div>
-                    <img src="/imagens/doce-2.jpg" alt="Slide">
+                <img src="imagens/doce-2.jpg" alt="Slide">
                 <div class="legenda">Doces</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">6 / 9</div>
-                    <img src="/imagens/doce-3.jpg" alt="Slide">
+                <img src="imagens/doce-3.jpg" alt="Slide">
                 <div class="legenda">Doces</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">7 / 9</div>
-                    <img src="/imagens/lanche1.jpg" alt="slide">
+                <img src="imagens/lanche1.jpg" alt="slide">
                 <div class="legenda">Lanches</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">8 / 9</div>
-                    <img src="/imagens/lanche2.jpg" alt="Slide">
+                <img src="imagens/lanche2.jpg" alt="Slide">
                 <div class="legenda">Lanches</div>
             </div>
             <div class="slideshow fade">
                 <div class="numeracao">9 / 9</div>
-                    <img src="/imagens/lanche3.jpg" alt="Slide">
+                <img src="imagens/lanche3.jpg" alt="Slide">
                 <div class="legenda">Lanches</div>
             </div>
+            <!-- Adiciona o evento de click passar e voltar  -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        
         </div>
+        <!-- Adiciona o evento de clicks para selecionar a posição da imagem  -->
         <div class="paginacao">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
@@ -134,6 +150,10 @@
             <span class="dot" onclick="currentSlide(8)"></span>
             <span class="dot" onclick="currentSlide(9)"></span>
         </div>
+
+    </div>
+    <!-- Adiciona na paginação para cara campo a posição da imagem -->
+
     </div>
     <div id="sessaoComentarios">
         <h5>Comentários e Avaliações</h5>
@@ -145,20 +165,20 @@
         <p>Seu comentário vale muito!</p>
 
         <form id="formularioComentario">
-            
+
             <input type="text" id="nome" name="nome" placeholder="Escreva seu nome" required>
             <br><br>
-            
+
             <textarea id="novoComentario" name="novoComentario" rows="4" placeholder="Escreva seu comentário" required></textarea>
             <br>
-            <input type="button" id="buttonComentario"value="Adicionar Comentário" onclick="adicionarComentario()">
+            <input type="button" id="buttonComentario" value="Adicionar Comentário" onclick="adicionarComentario()">
         </form>
     </div>
-        
-    <div>   
+    <!-- Criação da tabela de funcionamento -->
+    <div>
         <h5>Horarios de Funcionamento</h5>
     </div>
-    
+
     <div class="container">
         <h6>Nossos Horários</h6>
         <p id="status">Status: <span id="statusCafeteria" class="fechado">Fechado</span></p>
@@ -201,6 +221,8 @@
         </table>
     </div>
 </body>
+
+<!-- Informações da empresa no rodapé -->
 <footer>
     <div class="footer-content">
         <div class="contact-info">
@@ -216,5 +238,6 @@
     </div>
 </footer>
 
-<script src="/js/script.js"></script>
+<script src="js/script.js"></script>
+
 </html>

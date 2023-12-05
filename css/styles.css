@@ -7,23 +7,30 @@ body {
     background-color: #333;
 }
 
-.body-carrinho{
+.body-carrinho {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #333;
 }
 
-h1, h2, h3, h4, h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
     text-align: center;
     color: #fff;
     font-size: 30px;
 }
 
-h6, span, #status {
+h6,
+span,
+#status {
     font-size: 25px;
     margin: 20px;
 }
+
 
 /* Estilos para o menu */
 
@@ -75,8 +82,6 @@ li a:hover {
     margin: 50px auto;
 }
 
-
-
 #statusCafeteria {
     font-weight: bold;
 }
@@ -88,6 +93,8 @@ li a:hover {
 .fechado {
     color: red;
 }
+
+
 /* Estilos para o formulário */
 
 .formulario {
@@ -104,8 +111,30 @@ li a:hover {
     /* Remove a margem padrão do corpo da página */
 }
 
+.legendas {
+    margin-top: 10px;
+    /* Ajuste conforme necessário para espaçamento entre a paginação e as legendas */
+}
+
 
 /* Estilos para a tabela */
+
+.slideshow.fade {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* Opcional: centraliza o conteúdo */
+}
+
+.slideshow.fade img {
+    width: 100%;
+    /* Para garantir que a imagem ocupe toda a largura da div */
+}
+
+.slideshow.fade .legenda {
+    margin-top: 10px;
+    /* Ajuste conforme necessário para espaçamento entre a imagem e a legenda */
+}
 
 
 /* Estilos padrão para a tabela */
@@ -130,7 +159,8 @@ th {
 
 textarea {
     resize: none;
-  }
+}
+
 
 /* Propriedades de formatação de fontes, textos e cores */
 
@@ -192,6 +222,18 @@ p {
     padding: 20px;
 }
 
+.cardapio-h2 {
+    text-align: center;
+    color: #050101;
+    font-size: 30px;
+}
+
+.carrinho-total {
+    text-align: center;
+    color: #050101;
+    font-size: 30px;
+}
+
 .cardapio-body {
     background-color: #1b1b1f;
     /* Substitua pela cor desejada para o cardápio */
@@ -199,7 +241,7 @@ p {
     /* Remove a margem padrão do corpo da página */
 }
 
-.cardapio-carrossel{
+.cardapio-carrossel {
     background-color: #1b1b1f;
     /* Substitua pela cor desejada para o cardápio */
     width: 500px;
@@ -232,7 +274,6 @@ p {
 }
 
 .item img {
-    
     max-width: 100%;
     height: auto;
 }
@@ -453,7 +494,7 @@ footer {
     color: #333;
 }
 
-#sessaoComentarios{
+#sessaoComentarios {
     background-color: #666;
     text-align: center;
     margin: 20px 600px;
@@ -468,28 +509,25 @@ footer {
     align-items: center;
 }
 
-#sessaoComentarios h5{
+#sessaoComentarios h5 {
     color: #1b1b1f;
-
 }
 
 
 /*carrossel------------------------ */
+
 .slideshow-container {
-    
     width: 100%;
     position: relative;
     margin: auto;
-
 }
 
 .slideshow {
     display: none;
 }
 
-
-.slideshow-container img { 
-    width:100%; 
+.slideshow-container img {
+    width: 100%;
     height: 400px;
 }
 
@@ -518,19 +556,16 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-
 .legenda {
-
     width: auto;
     color: #fdfdfd;
     font-size: 0.9em;
-    padding:5px;
+    padding: 5px;
     position: absolute;
     bottom: 18%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgb(0, 0, 0);
     left: 10%;
-
 }
 
 .numeracao {
@@ -539,20 +574,16 @@ footer {
     padding: 8px 12px;
     position: absolute;
     top: 0;
-
 }
 
-.paginacao { 
-  
-    width:100%; 
-    float:left;
+.paginacao {
+    width: 100%;
+    float: left;
     margin: 10px 0;
     text-align: center;
-
 }
 
 .dot {
-
     cursor: pointer;
     height: 13px;
     width: 13px;
@@ -567,7 +598,6 @@ footer {
 .dot:hover {
     background-color: #242424;
 }
-
 
 .fade {
     -webkit-animation-name: fade;
@@ -594,11 +624,71 @@ footer {
     }
 }
 
+.carrinho {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.carrinho h3 {
+    text-align: center;
+}
+
+.carrinho ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carrinho li {
+    margin-bottom: 10px;
+}
+
+.carrinho li .id {
+    width: 100px;
+    float: left;
+}
+
+.carrinho li .quantidade {
+    width: 100px;
+    float: left;
+}
+
+.carrinho li .preco {
+    width: 100px;
+    float: left;
+}
+
+.carrinho .valor-total {
+    text-align: right;
+}
+
+.carrinho .valor-total p {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: #faf9f9;
+    margin-top: 10px;
+}
+
+
 /*960PX BREAKPOINT - Ajustando o texto para desktop*/
-@media (min-width:60em){
 
-
-    .legenda   { font-size:2em; padding:8px; }
-    .paginacao { margin:20px 0; }
-    .dot       { width:18px; height:18px; }
+@media (min-width:60em) {
+    .legenda {
+        margin-top: 10px;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-size: 2em;
+        padding: 8px;
+    }
+    .paginacao {
+        margin: 20px 0;
+    }
+    .dot {
+        width: 18px;
+        height: 18px;
+    }
 }

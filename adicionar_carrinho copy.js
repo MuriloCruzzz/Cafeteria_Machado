@@ -1,15 +1,17 @@
-var precoCarrinhoTotal = 0;
-var quantidadeTotal = 0;
+var carrinho = {
+    itens: [],
+    valorTotal: 0
+};
 
+// Função para adicionar ao carrinho
 function adicionarAoCarrinho() {
     // Seletor para todos os elementos com a classe "item"
     var itens = document.querySelectorAll('.item');
-    contador = 0;
+
     // Itera sobre cada item
     itens.forEach(function(item) {
         // Obtém a quantidade do input
-        var quantidade = parseInt(item.querySelector('input[name="idProduto"]').value, 10);
-
+        var quantidade = parseInt(item.querySelector('input[name="quantidade"]').value, 10);
 
         // Se a quantidade for válida
         if (!isNaN(quantidade) && quantidade > 0) {
@@ -19,28 +21,19 @@ function adicionarAoCarrinho() {
             // Calcula o preço total do item
             var precoTotal = quantidade * precoUnitario;
 
-            if (contador == 0) {
+            // Adiciona o item atual ao array "itens" do carrinho
+            carrinho.itens.push({
+                id: item.querySelector('input[name="idProduto"]').value,
+                quantidade: quantidade,
+                precoUnitario: precoUnitario,
+                precoTotal: precoTotal
+            });
 
-                quantidadeTotal += quantidade;
-
-                precoCarrinhoTotal += precoTotal;
-
-                contador = 1;
-            }
-
-            // Atualiza o preço total na página
-            item.querySelector('.preco').innerText = 'R$ ' + precoTotal.toFixed(2);
-
+            // Atualiza o valor total do carrinho
+            carrinho.valorTotal += precoTotal;
         } else {
             // Se a quantidade não for válida, exibe um alerta (pode ser ajustado conforme necessário)
 
         }
-
-
-        document.querySelector('.quantidade').innerText = 'Quantidade itens: ' + quantidadeTotal;
-
-        document.querySelector('.carrinho-').innerText = 'Valor Total: R$ ' + precoCarrinhoTotal.toFixed(2);
-
     });
-
 }
